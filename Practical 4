@@ -1,0 +1,62 @@
+# Practical 4
+# User-defined Functions and Built-in Modules
+
+import math
+import random
+import statistics
+
+# Function without argument
+def message():
+    print("Welcome to Python for Data Science")
+
+message()
+
+
+# Function with arguments
+def add(a, b):
+    return a + b
+
+print("\nAddition:", add(10, 20))
+
+
+# Function with default argument
+def greet(name="Student"):
+    print("Hello", name)
+
+greet()
+greet("Greeva")
+
+
+# Function with keyword arguments
+def student(name, age):
+    print("Name:", name)
+    print("Age:", age)
+
+student(age=20, name="Greeva")
+
+
+# Variable length arguments
+def total(*numbers):
+    return sum(numbers)
+
+print("\nTotal:", total(10, 20, 30, 40))
+
+
+# Math module
+print("\nMath Module")
+print("Square root:", math.sqrt(25))
+print("Power:", math.pow(2, 3))
+print("Ceiling:", math.ceil(4.3))
+
+
+# Random module
+print("\nRandom Module")
+print("Random number:", random.randint(1, 100))
+
+
+# Statistics module
+data = [10, 20, 30, 40, 50]
+
+print("\nStatistics Module")
+print("Mean:", statistics.mean(data))
+print("Median:", statistics.median(data))
