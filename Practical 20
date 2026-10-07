@@ -1,0 +1,51 @@
+# Practical 20
+# Data Visualization using Matplotlib
+
+import matplotlib.pyplot as plt
+
+months = ["Jan", "Feb", "Mar", "Apr", "May"]
+sales = [20, 35, 30, 45, 50]
+
+# Create figure
+plt.figure(figsize=(10, 8))
+
+# Line Plot
+plt.subplot(2, 3, 1)
+plt.plot(months, sales)
+plt.title("Line Plot")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+
+
+# Bar Chart
+plt.subplot(2, 3, 2)
+plt.bar(months, sales)
+plt.title("Bar Chart")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+
+
+# Histogram
+plt.subplot(2, 3, 3)
+plt.hist(sales)
+plt.title("Histogram")
+plt.xlabel("Sales")
+plt.ylabel("Frequency")
+
+
+# Pie Chart
+plt.subplot(2, 3, 4)
+plt.pie(sales, labels=months, autopct="%1.1f%%")
+plt.title("Pie Chart")
+
+
+# Scatter Plot
+plt.subplot(2, 3, 5)
+plt.scatter(months, sales)
+plt.title("Scatter Plot")
+plt.xlabel("Month")
+plt.ylabel("Sales")
+
+
+plt.tight_layout()
+plt.show()
