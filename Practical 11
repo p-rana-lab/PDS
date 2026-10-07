@@ -1,0 +1,43 @@
+# Practical 11
+# Pandas Series and DataFrame
+
+import pandas as pd
+
+# Series
+marks = pd.Series([80, 75, 90, 85])
+
+print("Series:")
+print(marks)
+
+
+# DataFrame
+data = {
+    "Name": ["Greeva", "Krisha", "Yashvi", "Zeel"],
+    "Marks": [85, 90, 88, 80],
+    "City": ["Surat", "Rajkot", "Surat", "Ahmedabad"]
+}
+
+df = pd.DataFrame(data)
+
+print("\nDataFrame:")
+print(df)
+
+
+# Selection
+print("\nName Column:")
+print(df["Name"])
+
+
+# Filtering
+print("\nStudents with marks greater than 85:")
+print(df[df["Marks"] > 85])
+
+
+# Grouping
+print("\nAverage Marks by City:")
+print(df.groupby("City")["Marks"].mean())
+
+
+# Aggregation
+print("\nAggregation:")
+print(df["Marks"].agg(["mean", "max", "min"]))
