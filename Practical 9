@@ -1,0 +1,52 @@
+# Practical 9
+# Data Science Life Cycle and Data Analysis
+
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Load dataset
+data = pd.DataFrame({
+    "StudyHours": [2, 3, 4, 5, 6],
+    "Attendance": [70, 75, 80, 85, 90],
+    "Marks": [55, 60, 68, 75, 85]
+})
+
+print("Dataset:")
+print(data)
+
+
+# Univariate Analysis
+print("\nUnivariate Analysis")
+print(data["Marks"].describe())
+
+plt.hist(data["Marks"])
+plt.xlabel("Marks")
+plt.ylabel("Frequency")
+plt.title("Marks Distribution")
+plt.show()
+
+
+# Bivariate Analysis
+print("\nBivariate Analysis")
+
+print(data[["StudyHours", "Marks"]].corr())
+
+plt.scatter(data["StudyHours"], data["Marks"])
+plt.xlabel("Study Hours")
+plt.ylabel("Marks")
+plt.title("Study Hours vs Marks")
+plt.show()
+
+
+# Multivariate Analysis
+print("\nMultivariate Analysis")
+
+print(data.corr())
+
+plt.scatter(data["StudyHours"], data["Marks"],
+            s=data["Attendance"] * 3)
+
+plt.xlabel("Study Hours")
+plt.ylabel("Marks")
+plt.title("Multivariate Analysis")
+plt.show()
