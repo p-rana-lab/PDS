@@ -1,0 +1,24 @@
+# Practical 12
+# SciPy Statistics
+
+import numpy as np
+from scipy import stats
+
+data = np.array([10, 12, 15, 18, 20, 22, 25])
+
+# Statistical measures
+print("Mean:", np.mean(data))
+print("Median:", np.median(data))
+print("Mode:", stats.mode(data, keepdims=True).mode[0])
+
+# One sample t-test
+t_statistic, p_value = stats.ttest_1samp(data, 18)
+
+print("\nOne Sample T-Test")
+print("T-statistic:", t_statistic)
+print("P-value:", p_value)
+
+if p_value < 0.05:
+    print("Result: Significant")
+else:
+    print("Result: Not Significant")
