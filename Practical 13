@@ -1,0 +1,43 @@
+# Practical 13
+# HTML Parsing using BeautifulSoup
+
+from bs4 import BeautifulSoup
+
+html = """
+<html>
+<head>
+<title>Student Page</title>
+</head>
+
+<body>
+
+<h1>Python for Data Science</h1>
+
+<p>Welcome to PDS practical.</p>
+
+<ul>
+<li>Python</li>
+<li>NumPy</li>
+<li>Pandas</li>
+</ul>
+
+</body>
+</html>
+"""
+
+soup = BeautifulSoup(html, "html.parser")
+
+# Get title
+print("Title:", soup.title.text)
+
+# Get heading
+print("Heading:", soup.h1.text)
+
+# Get paragraph
+print("Paragraph:", soup.p.text)
+
+# Get list items
+print("\nList Items:")
+
+for item in soup.find_all("li"):
+    print(item.text)
