@@ -1,0 +1,50 @@
+# Practical 19
+# Data Preprocessing using Pandas
+
+import pandas as pd
+
+data1 = pd.DataFrame({
+    "Name": ["Greeva", "Krisha"],
+    "Marks": [80, 90]
+})
+
+data2 = pd.DataFrame({
+    "Name": ["Yashvi", "Zeel"],
+    "Marks": [85, 75]
+})
+
+# Slicing
+print("Slicing:")
+print(data1.iloc[0:2])
+
+
+# Filtering
+print("\nFiltering:")
+print(data1[data1["Marks"] > 80])
+
+
+# Sorting
+data = pd.concat([data1, data2])
+
+print("\nSorted Data:")
+print(data.sort_values("Marks", ascending=False))
+
+
+# Concatenating
+print("\nConcatenated Data:")
+print(data)
+
+
+# Aggregation
+print("\nAggregation:")
+print("Average Marks:", data["Marks"].mean())
+
+
+# Normalization
+data["Normalized_Marks"] = (
+    (data["Marks"] - data["Marks"].min()) /
+    (data["Marks"].max() - data["Marks"].min())
+)
+
+print("\nNormalized Data:")
+print(data)
