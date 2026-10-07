@@ -1,0 +1,56 @@
+# Practical 2
+# List, Tuple, Set, Dictionary and String
+
+# List
+numbers = [10, 20, 30, 40]
+
+print("List:", numbers)
+
+numbers.append(50)
+numbers.remove(20)
+numbers.sort()
+
+print("After manipulation:", numbers)
+print("Length:", len(numbers))
+
+# Tuple
+fruits = ("Apple", "Banana", "Mango")
+
+print("\nTuple:", fruits)
+print("First fruit:", fruits[0])
+print("Number of fruits:", len(fruits))
+
+# Set
+colors = {"Red", "Blue", "Green"}
+
+print("\nSet:", colors)
+
+colors.add("Yellow")
+colors.remove("Blue")
+
+print("After manipulation:", colors)
+
+# Dictionary
+student = {
+    "name": "Greeva",
+    "age": 20,
+    "course": "Computer Engineering"
+}
+
+print("\nDictionary:", student)
+print("Name:", student["name"])
+
+student["age"] = 21
+student["city"] = "Surat"
+
+print("Updated Dictionary:", student)
+
+# String
+text = "Python for Data Science"
+
+print("\nString:", text)
+print("Uppercase:", text.upper())
+print("Lowercase:", text.lower())
+print("Length:", len(text))
+print("Replace:", text.replace("Python", "PDS"))
+print("Split:", text.split())
