@@ -1,0 +1,44 @@
+# Practical 10
+# NumPy Array Operations
+
+import numpy as np
+
+# Array creation
+arr = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+print("Array:")
+print(arr)
+
+# Indexing
+print("\nIndexing:")
+print(arr[0, 1])
+
+# Slicing
+print("\nSlicing:")
+print(arr[:, 0])
+
+# Reshaping
+numbers = np.array([1, 2, 3, 4, 5, 6])
+
+new_array = numbers.reshape(2, 3)
+
+print("\nReshaped Array:")
+print(new_array)
+
+# Broadcasting
+a = np.array([1, 2, 3])
+
+print("\nBroadcasting:")
+print(a + 10)
+
+# Mathematical operations
+print("\nMathematical Operations")
+print("Addition:", np.add(a, 2))
+print("Square:", np.square(a))
+print("Sum:", np.sum(a))
+print("Mean:", np.mean(a))
+print("Maximum:", np.max(a))
+print("Minimum:", np.min(a))
