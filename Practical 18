@@ -1,0 +1,36 @@
+# Practical 18
+# Data Cleaning
+
+import pandas as pd
+
+data = {
+    "Name": ["Greeva", "Krisha", "Yashvi", "Zeel", "Zeel"],
+    "Age": [20, 21, None, 20, 20],
+    "Marks": [85, 90, 200, 80, 80]
+}
+
+df = pd.DataFrame(data)
+
+print("Original Data:")
+print(df)
+
+
+# Detect missing values
+print("\nMissing Values:")
+print(df.isnull().sum())
+
+
+# Handle missing values
+df["Age"] = df["Age"].fillna(df["Age"].mean())
+
+
+# Remove duplicate records
+df = df.drop_duplicates()
+
+
+# Handle outlier
+# Marks should be between 0 and 100
+df.loc[df["Marks"] > 100, "Marks"] = df["Marks"].median()
+
+print("\nCleaned Data:")
+print(df)
